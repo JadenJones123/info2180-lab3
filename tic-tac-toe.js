@@ -1,4 +1,4 @@
-// Wait for the page to fully load before running any code
+
 window.addEventListener("DOMContentLoaded", () => {
   const board = document.getElementById("board");
   const squares = board.getElementsByTagName("div");
@@ -9,11 +9,11 @@ window.addEventListener("DOMContentLoaded", () => {
   let gameState = Array(9).fill(null);
   let gameActive = true;
 
-  // --- Exercise 1: Style each square ---
+  //  Exercise 1: Style each square 
   for (let i = 0; i < squares.length; i++) {
     squares[i].classList.add("square");
 
-    // --- Exercise 2: Handle click events for X and O ---
+    //  Exercise 2: Handle click events for X and O 
     squares[i].addEventListener("click", () => {
       if (!gameActive || gameState[i] !== null) return; // Disallow cheating (Exercise 6)
       squares[i].textContent = currentPlayer;
@@ -31,7 +31,7 @@ window.addEventListener("DOMContentLoaded", () => {
       }
     });
 
-    // --- Exercise 3: Hover effects ---
+    //  Exercise 3: Hover effects 
     squares[i].addEventListener("mouseover", () => {
       if (gameActive && gameState[i] === null) {
         squares[i].classList.add("hover");
@@ -43,7 +43,7 @@ window.addEventListener("DOMContentLoaded", () => {
     });
   }
 
-  // --- Exercise 5: Restart the game ---
+  //  Exercise 5: Restart the game 
   newGameBtn.addEventListener("click", () => {
     gameState = Array(9).fill(null);
     gameActive = true;
@@ -57,7 +57,7 @@ window.addEventListener("DOMContentLoaded", () => {
     }
   });
 
-  // --- Exercise 4: Check for winner ---
+  //  Exercise 4: Check for winner 
   function checkWinner() {
     const winningCombos = [
       [0, 1, 2], // rows
